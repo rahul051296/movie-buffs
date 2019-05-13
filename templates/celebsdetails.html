@@ -1,0 +1,62 @@
+<div ng-controller="CelebDetailsCtrl">
+    <div id="detail">
+        <h1 class="text-center" id="titleDetail">{{peopleDetail.name}}</h1>
+        <hr>
+        <div class="row container">
+
+            <div class="row col-md-5 col-md-offset-0 col-sm-10 col-sm-offset-2" ng-click="demo(tvDetails.id)">
+                <center> <img ng-src="http://image.tmdb.org/t/p/w500{{peopleDetail.profile_path}}" class="img-responsive img-rounded" onerror="this.onerror=null;this.src='images/preview.jpg';"></center>
+            </div>
+            <div class="row col-md-6 col-md-offset-1">
+                <h2 class="text-center">Biography</h2>
+                <hr>
+                <p>{{peopleDetail.biography}}</p>
+                <h3 class="text-center">Personal Info</h3>
+
+                <p><b>Date of Birth: </b>{{peopleDetail.birthday}}</p>
+                <p><b>Place of Birth: </b>{{peopleDetail.place_of_birth}}</p>
+                <p ng-if='peopleDetail.deathday != "" '><b>Died On: </b>{{peopleDetail.deathday}}</p>
+                <p ng-if="peopleDetail.also_known_as[0] != null"><b>Also Known as: </b><br>{{peopleDetail.also_known_as[0]}}<br>{{peopleDetail.also_known_as[1]}}<br>{{peopleDetail.also_known_as[2]}}</p>
+                <p><b>Known Credits: </b>{{credit}}</p>
+
+
+            </div>
+
+        </div>
+        <div class="row"><br><br>
+
+            <h2 class="text-center">Movies</h2>
+            <hr>
+            <div ng-repeat="km in knownMovies | limitTo: 32">
+                <div class="clearfix" ng-if="$index % 4 == 0"></div>
+                <div class=" col-md-3 col-sm-3 col-xs-6 sim_movie fix" scroll-to-item scroll-to="#detail">
+                    <a href="/movies/{{km.id}}">
+
+                        <img ng-src="http://image.tmdb.org/t/p/w342{{km.poster_path}}" onerror="this.onerror=null;this.src='images/preview.jpg';" class="img-rounded img-responsive obj-fix">
+                        <p class=" titles text-center">{{km.original_title}}</p>
+                        <h6 class="text-center">Release Date: {{km.release_date}}</h6>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+        <br><br>
+        <div class="row">
+
+            <h2 class="text-center">TV Shows</h2>
+            <hr>
+            <div ng-repeat="kt in knownTV | limitTo: 32">
+                <div class="clearfix" ng-if="$index % 4 == 0"></div>
+                <div class=" col-md-3 col-sm-3 col-xs-6 sim_movie fix" scroll-to-item scroll-to="#detail">
+                    <a href="/tv/{{kt.id}}">
+
+                        <img ng-src="http://image.tmdb.org/t/p/w342{{kt.poster_path}}" onerror="this.onerror=null;this.src='images/preview.jpg';" class="img-rounded img-responsive obj-fix">
+                        <p class="titles text-center">{{kt.original_name}}</p>
+                        <h6 class="text-center">Release Date: {{kt.first_air_date}}</h6>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

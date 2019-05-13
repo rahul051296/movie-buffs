@@ -1,0 +1,552 @@
+.obj-fix {
+    object-fit: contain;
+    width: 100%;
+    height: 380px;
+}
+.obj-fix-2{
+  object-fit: contain;
+  width: 100%;
+  height: 200px;
+}
+.text {
+   overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   line-height: 20px;
+   -webkit-line-clamp: 4;
+   -webkit-box-orient: vertical;
+}
+/*------------------
+    Body Background
+--------------------*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    background: #f3f3f3;
+    font-family: myThirdFont;
+    height: 100%;
+}
+
+
+/*------------------
+    PreLoader
+--------------------*/
+
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: black;
+    z-index: 99;
+}
+
+#loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    margin-left: -100px;
+    margin-top: -100px;
+}
+
+
+/*--------------------
+    Custom Fonts
+---------------------*/
+
+@import url('https://fonts.googleapis.com/css?family=Chewy');
+@import url('https://fonts.googleapis.com/css?family=Comfortaa');
+@font-face {
+    font-family: myFirstFont;
+    src: url('myFont.ttf');
+}
+
+@font-face {
+    font-family: mySecondFont;
+    src: url('myFont2.ttf');
+}
+
+@font-face {
+    font-family: myThirdFont;
+    src: url('myFont3.ttf');
+}
+
+@font-face {
+    font-family: myFourthFont;
+    src: url('myFont4.otf');
+}
+
+
+/*-------------------
+   Custom Navigation
+---------------------*/
+
+.navbar-custom {
+    position: fixed;
+    width: 100%;
+    margin-bottom: 0px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    z-index: 4;
+    transition: all 0.2s ease-in;
+    background: #000;
+}
+
+.navbar a {
+    color: white;
+}
+
+.navbar-brand {
+    margin: 0;
+    padding: 0;
+}
+
+.nav li {
+    font-size: 14px;
+    font-family: myThirdFont;
+}
+
+.nav li a:hover {
+    background: rgba(22, 22, 20, 0.12);
+    color: #f5634a;
+    position: relative;
+    top: 1px;
+}
+
+.nav>li>a:focus {
+    text-decoration: none;
+    background-color: #000;
+}
+
+
+/*-------------------------
+    Movie Buffs Main Logo
+---------------------------*/
+
+#head-1 {
+    position: absolute;
+    top: 230px;
+    left: 50%;
+    margin-left: -370px;
+}
+
+#tagline {
+    position: absolute;
+    top: 380px;
+    left: 50%;
+    margin-left: -160px;
+}
+
+.titles {
+    font-size: 2em;
+    width: 100%;
+    margin-bottom: 0;
+    font-family: myThirdFont;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.titles-2 {
+    width: 100%;
+    margin-bottom: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+/*------------------
+   Background Image
+--------------------*/
+
+#back {
+    background: url('../images/background2.jpg');
+    height: 100%;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+a i#pointer {
+    color: white !important;
+    position: absolute;
+    left: 50%;
+    top: 540px;
+    margin-left: -22px;
+    cursor: pointer;
+}
+
+
+/*------------------------------
+    Row Box in the Home Page
+--------------------------------*/
+
+.row-box-1 {
+    padding: 30px 0;
+    margin: 10px 0;
+    background: #f4f4f4;
+    box-shadow: -1px 1px 10px 0.1px rgba(0, 0, 0, 0.35);
+}
+
+.row-box-2 {
+    padding: 30px;
+    margin: 10px 0;
+    overflow: overlay;
+    background: #f4f4f4;
+    box-shadow: -1px 1px 10px 0.1px rgba(0, 0, 0, 0.35);
+}
+
+.row-box-1 img:hover {
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+.row-box-1 h2 {
+    font-family: myThirdFont;
+}
+
+.row-box-1 h2 p {
+    padding-top: 20px;
+}
+
+
+/*-------------------
+    AJS Adds
+---------------------*/
+
+.carousel-inner>.item>img {
+    width: 100%;
+}
+
+#myCarousel {
+    width: 80%;
+    margin: 0 auto;
+}
+
+#now-playing a {
+    color: black;
+}
+
+#now-playing a:hover {
+    color: black;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.boxTop {
+    background: white;
+    height: 450px;
+    white-space: normal; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 30px;
+    border: 8px solid #f3f3f3;
+    -webkit-box-shadow: -1px 1px 10px -1px rgba(0, 0, 0, 0.40);
+    -moz-box-shadow: -1px 1px 10px -1px rgba(0, 0, 0, 0.40);
+    box-shadow: -1px 1px 10px 0.5px rgba(0, 0, 0, 0.40);
+}
+
+#now-playing input[type=text]:focus {
+    box-shadow: 0px 0px;
+}
+
+#now-playing button {
+    border-radius: 50px;
+}
+
+#search {
+    margin-top: 18px;
+}
+
+#back-caret {
+    font-size: 15px;
+    margin-top: 20px;
+}
+
+#back-caret a {
+    color: white;
+    background: rgba(245, 99, 74, 0.7);
+    padding: 10px;
+    border-radius: 50px;
+}
+
+#now-playing h1 {
+    font-family: "myThirdFont";
+    text-align: center;
+    color: black;
+    /* text-decoration: underline; */
+    margin-bottom: 25px;
+    padding-top: 100px;
+    font-size: 50px;
+    ;
+}
+
+#now-playing h2 {
+    color: black;
+    font-size: 40px;
+    text-align: center;
+    text-decoration: underline;
+    font-family: myThirdFont;
+}
+
+#now-playing h3 {
+    padding: 10px;
+    /* text-decoration: underline; */
+    font-family: myThirdFont;
+}
+
+#now-playing h5 {
+    padding-bottom: 20px;
+    margin: 0;
+    word-wrap: break-word;
+}
+
+#now-playing p {
+    color: black;
+    font-family: myThirdFont;
+    text-align: center;
+    font-size: 16px;
+}
+
+.sim_movie {
+    padding: 25px 10px;
+}
+
+#search-bar input,
+#search-bar button {
+    background: #2e2e2e;
+    color: #fff;
+    border-radius: 0px;
+    border: 0px;
+}
+
+#search-bar input {
+    color: #000;
+}
+
+#search-bar a button {
+    border: 1px solid #2e2e2e;
+}
+
+#search-bar input:focus {
+    background: #f8f8f8;
+    color: black;
+}
+
+#search-bar a button:hover {
+    background: #f5634a;
+    border: 1px solid #f5634a;
+    transition: 0.5s;
+}
+
+
+/*------------------
+    Footer Styles
+---------------------*/
+
+footer {
+    padding: 20px;
+    margin-top: 40px;
+    text-align: center;
+    color: white;
+    background: black;
+    margin-bottom: -50px;
+}
+
+footer a {
+    color: white;
+}
+
+footer a:hover {
+    color: #f5634a;
+    text-decoration: none;
+}
+
+
+/*--------------------
+  Contact Form Styles
+----------------------*/
+
+label {
+    color: black;
+    font-family: myThirdFont;
+}
+
+.form-group {
+    padding: 5px;
+}
+
+
+/*------------------
+    General Styles
+--------------------*/
+
+.cursor-style {
+    cursor: pointer;
+}
+
+.float-left {
+    float: left;
+}
+
+.float-left:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 1333px) and (min-width: 769px) {
+    #back {
+        background-size: auto;
+    }
+    .obj-fix {
+        object-fit: contain;
+        width: 100%;
+        height: 300px;
+    }
+}
+
+
+/*-------------------------------------------------------------------
+
+                        For Small Tablets
+
+---------------------------------------------------------------------*/
+
+@media only screen and (max-width: 768px) and (min-width: 541px) {
+    /*-------------------------
+    Movie Buffs Main Logo
+---------------------------*/
+    #head-1 {
+        position: absolute;
+        left: 50%;
+        width: 500px;
+        margin-left: -250px;
+    }
+    #tagline {
+        position: absolute;
+        top: 340px;
+        left: 50%;
+        width: 250px;
+        margin-left: -125px;
+    }
+    #back {
+        background-size: auto;
+    }
+    a i#pointer {
+        color: white !important;
+        position: absolute;
+        left: 50%;
+        top: 470px;
+        margin-left: -22px;
+    }
+    #myCarousel {
+        width: 100%;
+        margin: 0 auto;
+    }
+    .obj-fix {
+        object-fit: contain;
+        width: 100%;
+        height: 280px;
+    }
+    .obj-fix-2 {
+        object-fit: contain;
+        width: 100%;
+        height: 250px;
+    }
+}
+
+
+/*-------------------------------------------------------------------
+
+                        For Smartphones
+
+---------------------------------------------------------------------*/
+
+@media all and (max-width: 540px) {
+    .fix {
+        height: 350px;
+    }
+    .fix1 {
+        height: 280px;
+    }
+    .obj-fix {
+        object-fit: contain;
+        width: 100%;
+        height: 280px;
+    }
+    .obj-fix-2 {
+        object-fit: contain;
+        width: 100%;
+        height: 250px;
+    }
+    /*-------------------------
+    Movie Buffs Main Logo
+---------------------------*/
+    #head-1 {
+        position: absolute;
+        left: 50%;
+        width: 320px;
+        margin-left: -160px;
+    }
+    #tagline {
+        position: absolute;
+        top: 300px;
+        left: 50%;
+        width: 200px;
+        margin-left: -100px;
+    }
+    #back {
+        background: url(../images/background2_mob.jpg);
+        height: 730px;
+    }
+    /*-------------------
+   Custom Navigation
+---------------------*/
+    .navbar-custom {
+        position: fixed;
+        width: 100%;
+        margin-bottom: 0px;
+        z-index: 4;
+    }
+    /*------------------------------
+    Row Box in the Home Page
+--------------------------------*/
+    .row-box-1 h2 {
+        font-family: myThirdFont;
+    }
+    .row-box-1 img {
+        padding: 0;
+    }
+    /*-------------------
+    AJS Adds
+---------------------*/
+    #now-playing h1 {
+        font-size: 40px;
+        padding-top: 70px;
+    }
+    #now-playing h2 {
+        font-size: 30px
+    }
+    #now-playing h3 {
+        font-size: 25px;
+        padding: 10px;
+    }
+    a i#pointer {
+        color: white !important;
+        position: absolute;
+        left: 50%;
+        top: 470px;
+        margin-left: -22px;
+    }
+    #myCarousel {
+        width: 100%;
+        margin: 0 auto;
+    }
+}

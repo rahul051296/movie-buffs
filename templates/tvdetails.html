@@ -1,0 +1,100 @@
+<div ng-controller="TvDetailsCtrl">
+    <div id="detail">
+        <h1 class="text-center" id="titleDetail">{{tvDetails.original_name}}<br>
+            <h3 class="text-center">{{tvYear}}</h3>
+        </h1>
+        <hr>
+        <div class="row">
+
+            <div class="col-md-6 col-sm-12">
+                <center><img ng-src="http://image.tmdb.org/t/p/w500{{tvDetails.poster_path}}" class="img-responsive img-rounded" onerror="this.onerror=null;this.src='images/preview.jpg';"></center>
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <h2 class="text-center">Synopsis</h2>
+                <hr>
+                <p>{{tvDetails.overview}}</p>
+                <p><b>Created by: </b>{{tvDetails.created_by[0].name}}</p>
+                <p><b>Genre: </b>{{tvDetails.genres[0].name}} <span ng-if="tvDetails.genres[1] !=null">,</span> {{tvDetails.genres[1].name}} <span ng-if="tvDetails.genres[2] !=null">,</span> {{tvDetails.genres[2].name}}</p>
+                <p><b>Rating: </b>{{tvDetails.vote_average}} out of 10 ({{tvDetails.vote_count}} Ratings)</p>
+                <p><b>Status: </b>{{showStatus}}</p>
+                <p><b>Runtime: </b>{{tvDetails.episode_run_time[0]}} minutes</p>
+                <p><b>No of Seasons: </b>{{tvDetails.number_of_seasons}} | <b>Episode Count: </b>{{tvDetails.number_of_episodes}}</p>
+                <p><b>Network: </b>{{tvDetails.networks[0].name}}</p>
+                <h2 class="text-center">Cast</h2>
+                <hr>
+                <div ng-repeat="star in stars | limitTo:4">
+                    <div class="col-md-3 col-sm-3 col-xs-6 fix1" ng-if="star.profile_path.startsWith('/')" scroll-to-item scroll-to="#detail">
+                        <a href="/celebs/{{star.id}}">
+
+                            <img ng-src="http://image.tmdb.org/t/p/w185{{star.profile_path}}" class="img-responsive img-rounded obj-fix-2">
+                            <h5 class="text-center titles-2">{{star.name}}</h5>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div id="gallery" class="row" ng-if="images2[0].file_path != null"><br><br>
+            <hr>
+            <h2>Image Gallery</h2>
+            <hr>
+            <div id="myCarousel" class="carousel slide" data-ride="carousel" style="overflow:hidden;">
+
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox">
+
+
+                    <div class="item" ng-class="{active:!$index}" ng-repeat="imag in images2">
+                        <img src="http://image.tmdb.org/t/p/original{{imag.file_path}}">
+                    </div>
+
+                </div>
+
+                <!-- Left and right controls -->
+                <a class="left carousel-control" data-target="#myCarousel" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true" style="color:white"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" data-target="#myCarousel" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true" style="color:white"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+        <div class="vid"><br><br>
+            <h2 class="text-center" ng-if="videostv[0].key != null">Videos</h2><br>
+            <div class="row">
+                <div class="col-md-6 col-md-offset-0 col-sm-10 col-sm-offset-1 col-xs-12" ng-repeat="videotv in videostv | limitTo:4">
+                    <hr>
+
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <youtube-video class="embed-responsive-item" video-id="videotv.key"></youtube-video>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <br><br>
+        <h2 style="padding-top:40px" ng-if="similarShows[0].id != null">Similar TV Shows</h2>
+        <div>
+
+
+            <div class="row">
+                <div ng-repeat="sim in similarShows | limitTo: 12">
+                    <div class="clearfix" ng-if="$index % 4 == 0"></div>
+                    <div class=" col-md-3 col-sm-3 col-xs-6 sim_movie fix" scroll-to-item scroll-to="#detail">
+                        <a href="/tv/{{sim.id}}">
+
+                            <img ng-src="http://image.tmdb.org/t/p/w342{{sim.poster_path}}" class="img-rounded img-responsive obj-fix" onerror="this.onerror=null;this.src='images/preview.jpg';">
+                            <p class="text-center titles">{{sim.name}}</p>
+                            <h6 class="text-center text-muted">Rating: {{sim.vote_average}}/10</h6>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>

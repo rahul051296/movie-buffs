@@ -1,0 +1,70 @@
+<div>
+    <h1 id="searchResults">Search Results</h1>
+    <hr>
+    <div class="row">
+        <h2 class="text-center" ng-if="searched[0].id != null">Movies</h2>
+
+        <div ng-repeat="search in searched">
+
+            <div class="clearfix" ng-if="$index % 4 == 0"></div>
+            <div class=" col-md-3 col-sm-3 col-xs-6 sim_movie fix">
+
+                <div scroll-to-item scroll-to="#detail">
+                    <a href="/movies/{{search.id}}">
+                        <img ng-src="http://image.tmdb.org/t/p/w342{{search.poster_path}}" onerror="this.onerror=null;this.src='images/preview.jpg';" class="img-rounded img-responsive obj-fix">
+                        <p class="titles text-center">{{search.title}}</p>
+                        <h6 class="text-center text-muted">Rating: {{search.vote_average}}/10</h6>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div>
+        <h2 class="text-center" ng-if="searchedTv[0].id != null">TV Shows</h2>
+
+        <div class="row">
+
+            <div ng-repeat="searchTv in searchedTv">
+
+                <div class="clearfix" ng-if="$index % 4 == 0"></div>
+                <div class=" col-md-3 col-sm-3 col-xs-6 sim_movie fix">
+
+                    <div scroll-to-item scroll-to="#detail">
+                        <a href="/tv/{{searchTv.id}}">
+
+                            <img ng-src="http://image.tmdb.org/t/p/w342{{searchTv.poster_path}}" class="img-rounded img-responsive obj-fix" onerror="this.onerror=null;this.src='images/preview.jpg';">
+                            <p class="titles text-center">{{searchTv.name}}</p>
+                            <h6 class="text-center text-muted">Rating: {{searchTv.vote_average}}/10</h6>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div>
+        <h2 class="text-center" ng-if="searchedP[0].id != null">People</h2>
+
+        <div class="row">
+            <div ng-repeat="searchpe in searchedP">
+
+                <div class="clearfix" ng-if="$index % 4 == 0"></div>
+                <div class=" col-md-3 col-sm-3 col-xs-6 sim_movie fix">
+
+                    <div scroll-to-item scroll-to="#detail">
+                        <a href="/celebs/{{searchpe.id}}">
+
+                            <img ng-src="http://image.tmdb.org/t/p/w342{{searchpe.profile_path}}" class="img-rounded img-responsive obj-fix" onerror="this.onerror=null;this.src='images/preview.jpg';">
+                            <p class="titles text-center">{{searchpe.name}}</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

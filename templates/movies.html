@@ -1,0 +1,46 @@
+<div ng-controller="HomeCtrl">
+    <h1 class="text-center"> In Theatres</h1>
+
+    <div class="row row-box-1 " ng-repeat="now in nowplaying | limitTo:quantity" scroll-to-item scroll-to="#detail">
+        <a href="/movies/{{now.id}}">
+            <div class="col-md-6 col-md-offset-0 col-sm-10 col-sm-offset-1">
+
+                <img ng-src="http://image.tmdb.org/t/p/w780{{now.backdrop_path}}" ng-if="now.backdrop_path.startsWith('/')" class="img-responsive">
+
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <h2>{{now.original_title}}</h2>
+                <p><b>Release date: </b>({{now.release_date}})
+                    
+                    <p class="text">{{now.overview}}</p>
+                      <p><b>Ratings:</b> {{now.vote_average}} out of 10<br>
+
+                    </p>
+            </div>
+        </a>
+    </div>
+
+    <div id="coming-soon">
+
+        <h1 class="text-center">Coming Soon</h1>
+
+        <div class="row">
+            <div ng-repeat="movie in movies">
+                <div class="clearfix" ng-if="$index % 4 == 0"></div>
+                <div class=" col-md-3 col-sm-3 col-xs-6 sim_movie fix">
+
+
+                    <div scroll-to-item scroll-to="#detail">
+                        <a href="/movies/{{movie.id}}">
+                            <img ng-src="http://image.tmdb.org/t/p/w342{{movie.poster_path}}" onerror="this.onerror=null;this.src='images/preview.jpg';" class="img-responsive obj-fix">
+                            <p class="text-center titles">{{movie.title}}</p>
+                            <h6 class="text-center text-muted">Release Date: {{movie.release_date}}</h6>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

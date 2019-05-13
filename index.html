@@ -1,0 +1,194 @@
+<!DOCTYPE HTML>
+<html ng-app='app'>
+
+<head>
+    <title>Movie Buffs | The Ecstasy of Cinema</title>
+    <base href="/">
+    <meta http-equiv="language" content="EN">
+    <meta http-equiv="content-type" content="text/html; charset= utf-8">
+    <meta http-equiv="content-type" content="text/html; charset= iso-8859-1">
+    <meta http-equiv="X-UA-Compatible " content="IE=edge">
+    <meta property="og:title" content="Movie Buffs | The Ecstasy of Cinema" />
+    <meta property="og:site_name" content="movie-buffs.xyz">
+    <meta property="og:description" content="Join us and enjoy the Ecstasy of Cinema" />
+    <link rel="canonical" href="http://www.movie-buffs.xyz/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="theme-color" content="#000">
+    <meta name="description" content="The Ecstasy of Cinema" />
+    <meta name="keywords" content="Movie Buffs, Movie Buffs Official, Movie Database, Writer, The Ecstasy of Cinema " />
+    <meta name="author" content="Rahul Prabhakar">
+    <meta name="robots" content="index,all">
+    <link rel="shortcut icon" href="images/favicon.png">
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
+    <!-- Bootstrap CSS-->
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+
+    <!-- Custom Styles CSS-->
+
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!--Font Awesome CSS -->
+
+    <link rel="stylesheet" href="css/font-awesome.css">
+
+    <!--  NG ProgressBar  -->
+
+    <link rel="stylesheet" href="css/ngProgress.css">
+
+    <!--Google Analytics-->
+
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-87119922-3', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+</head>
+
+<body ng-controller="HomeCtrl">
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div id="loader">
+            <img src="images/logo.gif" width="200px">
+        </div>
+    </div>
+
+    <!--Bootstrap Navbar Starts-->
+
+    <nav class="navbar navbar-custom navbar-static-top">
+        <!-- Button for Navigation Toggle for Smartphones -->
+        <button type="button" id="navbarToggle" class="glyph-pad navbar-toggle collapsed btn-lg" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+
+                <span class="fa fa-bars" aria-hidden="true" style="color:white"></span>
+
+                </button>
+        <button type="button" id="navbarToggle" class="glyph-pad navbar-toggle collapsed btn-lg" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2" aria-expanded="false">
+
+                <span class="fa fa-search" aria-hidden="true" style="color:white"></span>
+
+                </button>
+
+
+        <!-- Button for Navigation Toggle for Smartphones Ends -->
+
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="/" scroll-to-item scroll-to="#detail" class="navbar-brand"><img src="images/logo.png" style="width:190px;"></a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                <form class="navbar-form navbar-right hidden-sm hidden-xs" role="search" id="search-bar">
+
+                    <div class="input-group">
+                        <input type="text" id="srch" class="form-control" ng-model="searchQ" placeholder="Search">
+                        <span class="input-group-btn">
+							<a href="/search/{{searchQ}}" scroll-to-item scroll-to="#detail">
+                                <button type="submit" class="btn btn-default" id="sbutton" ng-click="search(searchQ)">
+								<span class="glyphicon glyphicon-search">
+									<span class="sr-only">Search</span>
+                        </span>
+                        </button>
+                        </a>
+                        </span>
+                    </div>
+
+                </form>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="text-center"><a href="/" scroll-to-item scroll-to="#detail">MOVIES</a></li>
+                    <li class="text-center"><a href="tv" scroll-to-item scroll-to="#detail">TV SHOWS</a></li>
+                    <li class="text-center"><a href="celebs" scroll-to-item scroll-to="#detail">CELEBRITIES</a></li>
+                </ul>
+
+            </div>
+            <div class=" collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+                <form method="get" class="navbar-form navbar-right hidden-lg hidden-md" role="search" id="search-bar">
+
+                    <div class="input-group">
+                        <input type="text" id="srch1" class="form-control" ng-model="searchQ" placeholder="Search">
+                        <span class="input-group-btn">
+							<a href="/search" scroll-to-item scroll-to="#detail">
+                                <button type="submit" class="btn btn-default" id="sbutton1" ng-click="search(searchQ)">
+								<span class="glyphicon glyphicon-search">
+									<span class="sr-only">Search</span>
+                        </span>
+                        </button>
+                        </a>
+                        </span>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </nav>
+    <!--Bootstrap Navbar Ends-->
+
+    <!-- Background Image  -->
+
+<!--
+    <header id="back">
+
+        <img src="images/header.png" class="animated fadeInDown" id="head-1">
+        <img src="images/tagline.png" class="animated fadeInDown" id="tagline">
+        <a scroll-to-item scroll-to="#detail"><i class="fa fa-angle-double-down fa-4x animated pulse infinite" id="pointer" aria-hidden="true"></i></a>
+    </header>
+-->
+
+    <!--Main Section-->
+
+    <section class="container" id="now-playing">
+
+        <div id="detail"></div>
+
+        <div ng-view> </div>
+
+    </section>
+
+    <footer>
+        <p>Movie Buffs | <a href="https://creativecommons.org/licenses/by/4.0/legalcode" target="_blank"> Creative Commons License &reg;</a></p>
+        <p>Powered by <b><a href="https://www.themoviedb.org/" target="_blank">TMDb</a></b></p>
+
+        <p>Copyright &copy; 2016-2017 by <a href="http://rahulprabhakar.ml" target="_blank" >Rahul Prabhakar</a> </p>
+        <a href="http://www.facebook.com/moviebuffs" target="_blank"> <i class="btn fa fa-facebook fa-2x" aria-hidden="true"></i></a>
+    </footer>
+
+
+
+
+    <!-- JQUERY JS Link-->
+
+    <script src="js/jquery.js"></script>
+    <!--BOOTSTRAP JS Link-->
+
+    <script src="js/bootstrap.js"></script>
+
+
+    <!--Angular JS Link-->
+
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-route.min.js"></script>
+    <script src="app/app.js"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="js/angular-youtube-embed.js"></script>
+    <script src="js/ngprogress.min.js"></script>
+
+    <!--CUSTOM JS Link-->
+
+    <script src="js/custom.js"></script>
+
+</body>
+
+</html>

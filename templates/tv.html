@@ -1,0 +1,79 @@
+<div ng-controller="TvCtrl">
+    <!--Airing Today -->
+    <div>
+        <div id="airingToday">
+            <a href="#detail">
+                <h1 class="text-center">Airing Today</h1>
+                <div class="row">
+                    <div ng-repeat="airs in air | limitTo: 12">
+                        <div class="clearfix" ng-if="$index % 4 == 0"></div>
+
+                        <div class=" col-md-3 col-sm-3 col-xs-6 sim_movie fix" scroll-to-item scroll-to="#detail">
+                            <a href="/tv/{{airs.id}}">
+
+                                <img ng-src="https://image.tmdb.org/t/p/w342{{airs.poster_path}}" onerror="this.onerror=null;this.src='images/preview.jpg';" class="img-rounded img-responsive obj-fix">
+                                <p class="titles text-center">{{airs.name}}</p>
+                                <h6 class="text-center text-muted">Rating: {{airs.vote_average}}/10</h6>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!-- Airing Today Ends-->
+
+    <!-- Popular Shows -->
+    <div>
+        <div id="popularTv">
+
+            <h1>Popular TV Shows</h1>
+            <div class="row row-box-1 " ng-repeat="p in popular | limitTo:5" scroll-to-item scroll-to="#detail">
+                <a href="/tv/{{p.id}}">
+
+                    <div class="col-md-6 col-md-offset-0 col-sm-10 col-sm-offset-1">
+
+                        <img ng-src="https://image.tmdb.org/t/p/w780{{p.backdrop_path}}" ng-if="p.backdrop_path.startsWith('/')" class="img-responsive">
+
+                    </div>
+
+                    <div class="col-md-6 col-sm-12">
+                        <h2>{{p.original_name}}</h2>
+                        <p><b>Rating:</b> {{p.vote_average}} out of 10
+                            <hr>
+                            <p class="text">{{p.overview}}</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Popular Shows Ends -->
+
+    <!-- Top Rated Shows -->
+    <div>
+        <div id="toprated">
+            <h1>Top Rated Shows</h1>
+
+
+            <div class="" >
+                <div ng-repeat="tr in topRated | limitTo:6">
+                <div class="col-md-4 col-sm-6 col-xs-12 boxTop"  scroll-to-item scroll-to="#detail">
+                    <a href="/tv/{{tr.id}}">
+
+                        <img ng-src="https://image.tmdb.org/t/p/w342{{tr.backdrop_path}}" ng-if="topRated[0].backdrop_path.startsWith('/')" class="img-responsive">
+                        <h3 class="text-center">{{tr.original_name}}</h3>
+                        <h5 class="text-center"><b>Rating:</b> {{tr.vote_average}} out of 10</h5>
+                        <p class="text">{{tr.overview}}</p>
+
+                    </a>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Top Rated Show Ends-->
+</div>
